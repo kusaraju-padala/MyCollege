@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+.header{
+    padding:20px;
+    background-color:#4f848b;
+    border-radius:2px;
+    height:100px;
+    font-family:Nunito;
+    /* margin:30px; */
+  }
+  .header h1{
+    color:#fff;
+    font-family:Nunito;
+    transform:translate(10%,-10%);
+    font-size:35px;
+  }
+  .input-text{
+    transform:translate(60%,-100%);
+  }
+  .input-pass{
+    transform:translate(75%,-149%);
+  }
+  input[type=submit]{
+    transform:translate(2420%,-580%);
+    background-color:#5f9c4c;
+    color:#fff;
+    border:#4267b2;
+    padding:6px;
+    font-size:15px;
+    border-radius:4px;
+    transition:background 2s;
+  }
+  .input-text p{
+    color:#fff;
+    font-size:15px;
+  }
+  .input-pass p{
+    color:#fff;
+    font-size:15px;
+  }
+  input[type=text]{
+    border:1px #46a;
+    border-radius:2px;
+    /* padding:8px; */
+    /* width:250px; */
+  }
+  input[type=password]{
+    border:1px #46a;
+    border-radius:2px;
+    /* padding:8px; */
+    /* width:250px; */
+  }
+  a{
+    text-decoration:none;
+    transition:color 2s;
+  }
+  a :hover{
+    color:#3498db;
+  }
+  input[type=submit]:hover{
+    background:#5585b1;
+  }
