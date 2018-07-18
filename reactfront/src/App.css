@@ -1,6 +1,11 @@
+.Padams{
+  width:100%;
+  height:100%;
+}
 .App {
-  padding-top: 50px;
-  margin-left: 20px;
+  padding-top: 0px;
+  margin-left: 0px;
+  height:100%;
 }
 input {
   display: block;

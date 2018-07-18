@@ -4,9 +4,10 @@ import Nav from './components/Nav';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import Cookies from 'universal-cookie';
-import PostsNav from './posts_handle/RenderPosts'
-import Header from './HeaderComponents/Header'
-import Header2 from './HeaderComponents/Header2'
+import PostsNav from './posts_handle/RenderPosts';
+import Header from './HeaderComponents/Header';
+import Header2 from './HeaderComponents/Header2';
+import WelcomeScreen from './welcomescreen/welcomenavs';
 class App extends Component {
   cookies = new Cookies();
   constructor(props) {
@@ -85,12 +86,23 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(json => {
-        localStorage.setItem('token', json.token);
-        this.setState({
-          logged_in: true,
-          displayed_form: '',
-          username: json.username
+        if('token' in json){
+          localStorage.setItem('token', json.token);
+          this.cookies.set('userToken', json.token, { path: '/',expires: new Date(Date.now()+2.506e+9)} );
+          this.cookies.set('username',json.username, {path : '/', expires: new Date(Date.now()+2.506e+9)});
+          this.setState({
+            logged_in: true,
+            displayed_form: '',
+            username: json.username
+          });
+        }
+        else{
+          this.setState({
+            displayed_form: '',
+            username: ''
         });
+        }
+        
       });
   };
 
@@ -121,7 +133,7 @@ class App extends Component {
     }
 
     return (
-      <div>
+      <div class="Padams">
       {/* <Header
       logged_in={this.state.logged_in}
       handle_logout={this.handle_logout}
@@ -133,25 +145,27 @@ class App extends Component {
       handle_login={this.handle_login}
       />
       <div className="App">
-        <Nav
+          {/* <Nav
           logged_in={this.state.logged_in}
           display_form={this.display_form}
           handle_logout={this.handle_logout}
-        />
-        {form}
-        <h3>
+        /> 
+        {form}  */}
+        
           {this.state.logged_in
             ? <div>
               <h3>{`Hello, ${this.state.username}`}</h3>
               <PostsNav
                 userToken={this.cookies.get('userToken')}
               />
-          
               </div>
-              
-            
-            : 'Please Log In'}
-        </h3>
+            : 
+            <WelcomeScreen
+              handle_signup={this.handle_signup} 
+              />
+            }
+        
+        
       </div>
       </div>
     );

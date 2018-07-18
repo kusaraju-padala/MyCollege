@@ -19,7 +19,7 @@
   .input-pass{
     transform:translate(75%,-149%);
   }
-  input[type=submit]{
+  .inputsubmitlogin{
     transform:translate(2420%,-580%);
     background-color:#5f9c4c;
     color:#fff;
@@ -56,6 +56,6 @@
   a :hover{
     color:#3498db;
   }
-  input[type=submit]:hover{
+  .inputsubmitlogin:hover{
     background:#5585b1;
   }

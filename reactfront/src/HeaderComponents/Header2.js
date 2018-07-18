@@ -44,7 +44,7 @@ class Header2 extends React.Component {
                     <a href="#"><p class="under-input">    
                         Forgotten account ?</p></a>
                 </div>
-                <input type="submit" value="Login"/> 
+                <input class="inputsubmitlogin" type="submit" value="Login"/> 
                 </form>
                 }
             </div>

@@ -1,0 +1,22 @@
+.postcontainer{
+    width:500px;
+    background-color: rgb(219, 232, 233);
+    margin-top: 20px;
+    border-radius: 4px;
+}
+.topbar{
+    height:80px;
+    width:500px;
+    background-color: rgb(198, 224, 207);
+    border-radius: 4px;
+}
+.textspace{
+    background-color:white;
+    width:500px;
+}
+.content{
+    width:500px;
+}
+.postimage{
+    width:450px;
+}

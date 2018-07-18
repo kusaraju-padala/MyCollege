@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from "react-infinite-scroll-component";
-
+import './feed.css'
 const styler = {
     height: 50,
     border: "1px solid green",
@@ -78,8 +78,15 @@ class PostsNav extends React.Component {
               }
             >
               {this.state.results.map( post => (
-                <div style={styler} key={post.id}>
-                div - #{post.id}
+                <div class="postcontainer" key={post.id}>
+                <div class="topbar">post user details</div>
+                <div class="textspace">{post.post_text}</div>
+                <div class="content">
+                {'C:\\PythonCourse\\MRND Summer\\Apps Course\\mycollege\\'+post.content_url}
+                </div>
+                <div class="postimage"><img class="postimage" 
+                src={require('C:\\PythonCourse\\MRND Summer\\Apps Course\\mycollege\\'+post.content_url)}>
+                </img></div>
                 </div>
             ))}
               
@@ -95,3 +102,6 @@ export default PostsNav;
 PostsNav.propTypes = {
     userToken : PropTypes.string.isRequired,
 };
+/*<img class="postimage" 
+                src={require('../../../'+post.content_url)}>
+                </img>*/
